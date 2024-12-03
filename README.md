@@ -1,5 +1,5 @@
 # sarcastic-text-for-cli
-I hate typing that by hand, so I made a tool for it.
+i HAtE TyPiNG THaT By HaNd So i MAdE A ToOl FOr iT.
 
 ## Overview
 This command-line utility converts plain text into "sarcasm text," altering the capitalization based on specified inversion settings. The tool lets you control the degree and pattern of capitalization inversion to achieve your desired level of sarcasm.
