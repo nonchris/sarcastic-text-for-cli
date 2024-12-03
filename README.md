@@ -15,7 +15,7 @@ pip install .
 
 To run the sarcasm text converter, use the following command structure:
 ```bash
-make-sarcasm [text] [args]
+sarcasm [text] [args]
 ```
 or if you prefer to not install it:
 ```bash
@@ -34,13 +34,13 @@ You can also pipe the input into the program.
 
 1. Basic example with the default settings:
     ```bash
-    make-sarcasm I am excited to use this tool
+    sarcasm I am excited to use this tool
     ```
     Output might look like: `i Am EXcITeD tO UsE THiS TOOl`
 
 2. Example with custom inversion factor and penalty:
     ```bash
-    echo "This tool is quite amazing" | make-sarcasm  -f 80 -p 50 -a
+    echo "This tool is quite amazing" | sarcasm  -f 80 -p 50 -a
     ```
     Output might look like: `tHiS TOOL Is QUiTe AmAZiNG`
 

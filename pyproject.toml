@@ -17,7 +17,7 @@ classifiers = [
 ]
 
 [project.scripts]
-make-sarcasm = "sarcastic_text:cli_main"
+sarcasm = "sarcastic_text:cli_main"
 
 [project.urls]
 "Homepage" = "https://github.com/nonchris/sarcastic-text-for-cli/tree/main"
