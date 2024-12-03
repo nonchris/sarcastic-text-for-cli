@@ -1,14 +1,19 @@
 import argparse
+import sys
 from random import randint
 
 
+# this function is mostly GPT-4o generated, but manually reviewed and adjusted
 def cli_main():
     """entrypoint for CLI"""
     parser = argparse.ArgumentParser(
         description="Convert text to sarcasm text with specified inversion settings."
     )
     parser.add_argument(
-        "text", type=str, nargs="+", help="The text to process as sarcasm."
+        "text",
+        type=str,
+        nargs="*",
+        help="The text to process as sarcasm.",
     )
     parser.add_argument(
         "--inversion_factor",
@@ -36,7 +41,14 @@ def cli_main():
 
     args = parser.parse_args()
 
-    input_text = " ".join(args.text)
+    # If text is provided via command line arguments
+    if args.text:
+        input_text = " ".join(args.text)
+    # If text is being piped in
+    elif not sys.stdin.isatty():
+        input_text = sys.stdin.read().strip()
+    else:
+        parser.error("No text provided either as argument or through stdin.")
 
     if args.allow_same_case:
         result = make_sarcasm(
@@ -52,6 +64,7 @@ def cli_main():
         )
 
     print(result)
+
 
 
 def make_sarcasm_prevent_same_case(

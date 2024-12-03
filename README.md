@@ -7,6 +7,7 @@ This command-line utility converts plain text into "sarcasm text," altering the 
 ## Install
 No additional dependencies are required.
 ```bash
+# download the repository
 pip install .
 ```
 
@@ -20,6 +21,7 @@ or if you prefer to not install it:
 ```bash
 python3 sarcastic_text/main.py [text] [args]
 ```
+You can also pipe the input into the program.
 
 ### Options
 
@@ -38,7 +40,7 @@ python3 sarcastic_text/main.py [text] [args]
 
 2. Example with custom inversion factor and penalty:
     ```bash
-    make-sarcasm This tool is quite amazing -f 80 -p 50 -a
+    echo "This tool is quite amazing" | make-sarcasm  -f 80 -p 50 -a
     ```
     Output might look like: `tHiS TOOL Is QUiTe AmAZiNG`
 
